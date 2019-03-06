@@ -11,7 +11,7 @@ if [ $(echo `pwd` | grep setup_scripts | wc -l) -ne 0 ]; then
 	bitquest_dir=`pwd`
 	mvn package -B
 
-	spigot_file='spigot-1.12.2-R0.1-SNAPSHOT.jar'
+	spigot_file='spigot-1.13.2.jar'
 
 	echo 'Downloading $spigot_file'
 
@@ -20,7 +20,7 @@ if [ $(echo `pwd` | grep setup_scripts | wc -l) -ne 0 ]; then
 	cd ../spigot
 	spigot_dir=`pwd`
 	rm $spigot_file 2> /dev/null
-	wget http://jenkins.bitquest.co/job/spigot/lastSuccessfulBuild/artifact/Spigot/Spigot-Server/target/$spigot_file
+	wget https://cdn.getbukkit.org/spigot/$spigot_file
 
 	# automatically agree to the eula so we don't have to run spigot twice during setup
 	echo 'Agreeing to the Mojang EULA'
